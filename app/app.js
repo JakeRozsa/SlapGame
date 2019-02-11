@@ -4,6 +4,7 @@ let hits = 0;
 let atkpwr = 1;
 
 function hatThrow() {
+  document.getElementById('response').innerHTML = `<h2>Mario threw is hat at Bowser!</h2>`;
   if (atkpwr == 1) {
     health2 = health2 - 2
     if (health2 < 1) {
@@ -20,6 +21,7 @@ function hatThrow() {
 }
 
 function fireBall() {
+  document.getElementById('response').innerHTML = `<h2>Mario spit a fireball at Bowser!</h2>`;
   if (atkpwr == 1) {
     health2 = health2 - 5
     if (health2 < 1) {
@@ -36,6 +38,7 @@ function fireBall() {
 }
 
 function pileDriver() {
+  document.getElementById('response').innerHTML = `<h2>Mario butt-smashed Bowser!</h2>`;
   if (atkpwr == 1) {
     health2 = health2 - 10
     if (health2 < 1) {
@@ -62,6 +65,7 @@ function reset() {
 }
 
 function eatMe() {
+  document.getElementById('response').innerHTML = `<h2>Mario ate a mushroom.. yum!</h2>`;
   health += 25;
   if (health > 99) {
     health = 100
@@ -70,6 +74,7 @@ function eatMe() {
 }
 
 function spitMe() {
+  document.getElementById('response').innerHTML = `<h2>Mario found a power-up!</h2>`;
   if (atkpwr < 3) {
     atkpwr++
   }
@@ -77,6 +82,7 @@ function spitMe() {
 }
 
 function lifeUp(coins) {
+  document.getElementById('response').innerHTML = `<h2>Mario picked up 100 coins!</h2>`;
   health += (coins);
   if (health > 99) {
     health = 100
