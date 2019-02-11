@@ -9,7 +9,6 @@ function hatThrow() {
   document.getElementById('count').innerHTML = `<button disabled>Hits: ${hits}</button>`;
   if (atkpwr == 1) {
     health2 = health2 - 2
-
     document.getElementById('health2').innerText = `${health2}`;
   } else if (atkpwr == 2) {
     health2 = health2 - 4
@@ -31,7 +30,6 @@ function punch() {
   document.getElementById('count').innerHTML = `<button disabled>Hits: ${hits}</button>`;
   if (atkpwr == 1) {
     health2 = health2 - 5
-
     document.getElementById('health2').innerText = `${health2}`;
   } else if (atkpwr == 2) {
     health2 = health2 - 10
