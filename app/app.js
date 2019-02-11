@@ -1,63 +1,88 @@
 let health = 100;
-let hits = 0
+let health2 = 200;
+let hits = 0;
+let atkpwr = 1;
 
-let goodButtons = [
-  {
-    name: 'Mushroom',
-    modifier: 2,
-    description: 'Power up!',
-    count: 2
-  },
-  {
-    name: 'Fire Flower',
-    modifier: 2,
-    description: 'Power up!',
-    count: 2,
-  },
-  {
-    name: 'Metal Box',
-    modifier: 3,
-    description: 'Power up!',
-    count: 1,
+function hatThrow() {
+  if (atkpwr == 1) {
+    health2 = health2 - 2
+    if (health2 < 1) {
+      health2 = 0
+    }
+    document.getElementById('health2').innerText = `${health2}`;
+  } else if (atkpwr == 2) {
+    health2 = health2 - 4
+    document.getElementById('health2').innerText = `${health2}`;
+  } else if (atkpwr == 3) {
+    health2 = health2 - 6
+    document.getElementById('health2').innerText = `${health2}`;
   }
-]
-
-function slap(x) {
-  health -= (x);
-  if (health < 1) {
-    health = 0
-  }
-  document.getElementById('health').innerText = health
 }
+
+function fireBall() {
+  if (atkpwr == 1) {
+    health2 = health2 - 5
+    if (health2 < 1) {
+      health2 = 0
+    }
+    document.getElementById('health2').innerText = `${health2}`;
+  } else if (atkpwr == 2) {
+    health2 = health2 - 10
+    document.getElementById('health2').innerText = `${health2}`;
+  } else if (atkpwr == 3) {
+    health2 = health2 - 15
+    document.getElementById('health2').innerText = `${health2}`;
+  }
+}
+
+function pileDriver() {
+  if (atkpwr == 1) {
+    health2 = health2 - 10
+    if (health2 < 1) {
+      health2 = 0
+    }
+    document.getElementById('health2').innerText = `${health2}`;
+  } else if (atkpwr == 2) {
+    health2 = health2 - 20
+    document.getElementById('health2').innerText = `${health2}`;
+  } else if (atkpwr == 3) {
+    health2 = health2 - 30
+    document.getElementById('health2').innerText = `${health2}`;
+  }
+}
+
 function reset() {
   health = 100;
-  console.log(health);
-  document.getElementById('health').innerText = `${health}`
+  health2 = 200;
+  hits = 0;
+  // console.log(health);
+  document.getElementById('health').innerText = `${health}`;
+  document.getElementById('health2').innerText = `${health2}`;
+  document.getElementById('count').innerText = `${hits}`
 }
 
-
-function count(hits) {
-  if (slap) {
-    ++hits
-  }
-}
-
-function eatMe(mushroom) {
-  health += (mushroom);
+function eatMe() {
+  health += 25;
   if (health > 99) {
     health = 100
   }
+  document.getElementById('health').innerText = `${health}`
 }
 
-function spitMe(fireBall) {
-  let fireball2 = fireBall + 2
-  slap(fireball2)
+function spitMe() {
+  if (atkpwr < 3) {
+    atkpwr++
+  }
+  document.getElementById('health2').innerText = `${health2}`;
 }
 
-function metalMe(metalBox) {
-
+function lifeUp(coins) {
+  health += (coins);
+  if (health > 99) {
+    health = 100
+  }
+  document.getElementById('health').innerText = `${health}`
 }
-
 
 
 
@@ -77,7 +102,15 @@ function metalMe(metalBox) {
 
 
 
-
+// function slap(x) {
+//   health -= (x);
+//   hits += (1);
+//   if (health < 1) {
+//     health = 0
+//   }
+//   document.getElementById('health').innerText = `${health}`;
+//   document.getElementById('count').innerText = `${hits}`
+// }
 
 
 

@@ -1,6 +1,25 @@
-container-fluid {
-width: 800px;
+body {
+background-image: url(./background.png);
+background-repeat: no-repeat;
+background-size: cover;
 }
-.mario {
-  width: 300px;
+.button {
+ padding: 5px;
+}
+#mario {
+  padding: 10px;
+  -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+#bowser {
+  padding: 10px;
+  zoom: 130%;
+}
+.title {
+  max-height: 250px;
+  margin-bottom: -50px;
 }
