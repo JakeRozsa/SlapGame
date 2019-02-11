@@ -5,11 +5,11 @@ let atkpwr = 1;
 
 function hatThrow() {
   document.getElementById('response').innerHTML = `<h2>Mario threw is hat at Bowser!</h2>`;
+  hits++
+  document.getElementById('count').innerHTML = `<button disabled>Hits: ${hits}</button>`;
   if (atkpwr == 1) {
     health2 = health2 - 2
-    if (health2 < 1) {
-      health2 = 0
-    }
+
     document.getElementById('health2').innerText = `${health2}`;
   } else if (atkpwr == 2) {
     health2 = health2 - 4
@@ -18,15 +18,20 @@ function hatThrow() {
     health2 = health2 - 6
     document.getElementById('health2').innerText = `${health2}`;
   }
+  if (health2 < 1) {
+    health2 = 0
+    document.getElementById('health2').innerText = `${health2}`;
+    document.getElementById('response').innerHTML = `<h3>You saved Princess Peach!</h3>`;
+  }
 }
 
-function fireBall() {
-  document.getElementById('response').innerHTML = `<h2>Mario spit a fireball at Bowser!</h2>`;
+function punch() {
+  document.getElementById('response').innerHTML = `<h2>Mario punched Bowser!</h2>`;
+  hits++
+  document.getElementById('count').innerHTML = `<button disabled>Hits: ${hits}</button>`;
   if (atkpwr == 1) {
     health2 = health2 - 5
-    if (health2 < 1) {
-      health2 = 0
-    }
+
     document.getElementById('health2').innerText = `${health2}`;
   } else if (atkpwr == 2) {
     health2 = health2 - 10
@@ -35,15 +40,19 @@ function fireBall() {
     health2 = health2 - 15
     document.getElementById('health2').innerText = `${health2}`;
   }
+  if (health2 < 1) {
+    health2 = 0
+    document.getElementById('health2').innerText = `${health2}`;
+    document.getElementById('response').innerHTML = `<h3>You saved Princess Peach!</h3>`;
+  }
 }
 
 function pileDriver() {
   document.getElementById('response').innerHTML = `<h2>Mario butt-smashed Bowser!</h2>`;
+  hits++
+  document.getElementById('count').innerHTML = `<button disabled>Hits: ${hits}</button>`;
   if (atkpwr == 1) {
     health2 = health2 - 10
-    if (health2 < 1) {
-      health2 = 0
-    }
     document.getElementById('health2').innerText = `${health2}`;
   } else if (atkpwr == 2) {
     health2 = health2 - 20
@@ -52,16 +61,23 @@ function pileDriver() {
     health2 = health2 - 30
     document.getElementById('health2').innerText = `${health2}`;
   }
+  if (health2 < 1) {
+    health2 = 0
+    document.getElementById('health2').innerText = `${health2}`;
+    document.getElementById('response').innerHTML = `<h3>You saved Princess Peach!</h3>`;
+  }
 }
 
 function reset() {
   health = 100;
   health2 = 200;
   hits = 0;
+  atkpwr = 1;
   // console.log(health);
   document.getElementById('health').innerText = `${health}`;
   document.getElementById('health2').innerText = `${health2}`;
-  document.getElementById('count').innerText = `${hits}`
+  document.getElementById('count').innerHTML = `<button disabled>Hits: 0</button>`;
+  document.getElementById('mario').innerHTML = `<img class="mario" src="./assets/mario-default.png">`
 }
 
 function eatMe() {
@@ -75,6 +91,7 @@ function eatMe() {
 
 function spitMe() {
   document.getElementById('response').innerHTML = `<h2>Mario found a power-up!</h2>`;
+  document.getElementById('mario').innerHTML = `<img class="mario" src="./assets/mariowithfire.png">`
   if (atkpwr < 3) {
     atkpwr++
   }
@@ -82,7 +99,7 @@ function spitMe() {
 }
 
 function lifeUp(coins) {
-  document.getElementById('response').innerHTML = `<h2>Mario picked up 100 coins!</h2>`;
+  document.getElementById('response').innerHTML = `<h2>Mario picked up 100 coins! </h2>`;
   health += (coins);
   if (health > 99) {
     health = 100

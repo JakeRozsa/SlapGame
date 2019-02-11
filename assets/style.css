@@ -6,7 +6,17 @@ background-size: cover;
 .button {
  padding: 5px;
 }
-#mario {
+.mushroom {
+  max-height: 50px;
+}
+.fireFlower {
+  max-height: 50px;
+}
+.lifeUp {
+  max-height: 50px;
+}
+.mario {
+  max-height: 320px;
   padding: 10px;
   -moz-transform: scaleX(-1);
         -o-transform: scaleX(-1);
@@ -21,9 +31,23 @@ background-size: cover;
 }
 .title {
   max-height: 250px;
+  margin-top: -50px;
   margin-bottom: -50px;
 }
 h2 {
   font-size: 33px;
+font-variant-caps: all-petite-caps;
 }
-
+h3 {
+  font-size: 33px;
+  color: rgb(0, 233, 35);
+  text-shadow: 2px 2px #000000;
+font-variant-caps: all-petite-caps;
+}
+h4 {
+  font-size: 33px;
+font-variant-caps: all-petite-caps;
+color: pink;
+text-shadow: 2px 2px #000000;
+margin-bottom: 10px;
+}
