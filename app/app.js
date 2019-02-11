@@ -3,6 +3,7 @@ let health2 = 200;
 let hits = 0;
 let atkpwr = 1;
 
+
 function hatThrow() {
   document.getElementById('response').innerHTML = `<h2>Mario threw is hat at Bowser!</h2>`;
   hits++
@@ -23,6 +24,7 @@ function hatThrow() {
     document.getElementById('response').innerHTML = `<h3>You saved Princess Peach!</h3>`;
   }
 }
+
 
 function punch() {
   document.getElementById('response').innerHTML = `<h2>Mario punched Bowser!</h2>`;
